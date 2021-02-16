@@ -1,8 +1,10 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
+import AddTransaction from './add-transaction'
 import Balance from './balance'
 import Header from './header'
-import IncomeExpenses from './incomeExpenses'
+import IncomeExpenses from './income-expenses'
+import TransactionList from './transaction-list'
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
       >
         <Balance />
         <IncomeExpenses />
+        <TransactionList />
+        <AddTransaction />
       </div>
     </div>
   )

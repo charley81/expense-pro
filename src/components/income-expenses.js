@@ -10,6 +10,8 @@ const IncomeExpenses = () => {
         justify-content: center;
         margin: 1rem auto;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        background: var(--colorLight);
+        border-radius: var(--borderRadius);
 
         div {
           padding: 2rem;
