@@ -1,10 +1,25 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
 import React, { useState } from 'react'
+import { useGlobalContext } from '../context/context'
 
 const AddTransaction = () => {
   const [text, setText] = useState('')
   const [amount, setAmount] = useState(0)
+
+  const { addTransaction } = useGlobalContext()
+
+  const handleFormSubmit = e => {
+    e.preventDefault()
+
+    const newTransaction = {
+      id: new Date().getTime().toString(),
+      text,
+      amount: +amount
+    }
+
+    addTransaction(newTransaction)
+  }
 
   return (
     <div
@@ -56,7 +71,7 @@ const AddTransaction = () => {
       `}
     >
       <h3>Add new transaction</h3>
-      <form>
+      <form onSubmit={handleFormSubmit}>
         <div className="form-control">
           <label htmlFor="text">text</label>
           <input
