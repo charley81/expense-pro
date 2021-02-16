@@ -1,8 +1,12 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
 import React from 'react'
+import { useGlobalContext } from '../context/context'
+import Transaction from './transaction'
 
 const TransactionList = () => {
+  const { transactions } = useGlobalContext()
+
   return (
     <div
       css={css`
@@ -28,18 +32,10 @@ const TransactionList = () => {
     >
       <h3>History</h3>
       <ul>
-        <li>
-          Cash <span>-$400</span>
-          <button>x</button>
-        </li>
-        <li>
-          Cash <span>-$400</span>
-          <button>x</button>
-        </li>
-        <li>
-          Cash <span>-$400</span>
-          <button>x</button>
-        </li>
+        {transactions.map(item => {
+          const { id, text, amount } = item
+          return <Transaction key={id} text={text} amount={amount} />
+        })}
       </ul>
     </div>
   )

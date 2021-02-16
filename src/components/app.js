@@ -8,7 +8,7 @@ import TransactionList from './transaction-list'
 
 function App() {
   return (
-    <div>
+    <>
       <Header />
       <div
         css={css`
@@ -20,7 +20,7 @@ function App() {
         <TransactionList />
         <AddTransaction />
       </div>
-    </div>
+    </>
   )
 }
 
