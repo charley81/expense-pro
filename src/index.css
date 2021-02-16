@@ -32,3 +32,11 @@ body {
 li {
   list-style: none;
 }
+
+.plus {
+  border-right: 0.5rem solid var(--colorGreen);
+}
+
+.minus {
+  border-right: 0.5rem solid var(--colorRed);
+}
